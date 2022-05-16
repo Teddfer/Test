@@ -19,6 +19,7 @@ class HomeController
             $num1 = (isset($param[0]) ? $param[0] : 0);
             $num2 = (isset($param[1]) ? $param[1] : 0);
         }
+
         $rpta = $num1 + $num2;
 
         require_once __DIR__ .  '/../views/home/suma.php';
@@ -62,7 +63,11 @@ class HomeController
             $num2 = (isset($param[1]) ? $param[1] : 0);
         }
 
+        if ($num1 > 0 & $num2 > 0) {
             $rpta = $num1 / $num2;
+        } else {
+            $rpta = 0;
+        }
 
         require_once __DIR__ .  '/../views/home/division.php';
     }
